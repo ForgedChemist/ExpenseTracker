@@ -118,6 +118,7 @@ const ExpenseSummary = ({ expenses, exchangeRates, deleteExpense, deleteAllExpen
             <label>Display Currency:</label>
             <select value={baseCurrency} onChange={(e) => setBaseCurrency(e.target.value)}>
               <option value="USD">USD ($)</option>
+              <option value="TRY">TRY (₺)</option> {/* Added TRY */}
               <option value="EUR">EUR (€)</option>
               <option value="GBP">GBP (£)</option>
               <option value="JPY">JPY (¥)</option>

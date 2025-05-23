@@ -17,9 +17,10 @@ function App() {
   const [expenses, setExpenses] = useState([]);
   const [exchangeRates, setExchangeRates] = useState({
     USD: 1,
+    TRY: 38.89,
     EUR: 0.85,
     GBP: 0.75,
-    JPY: 110.5,
+    JPY: 110.5
   });
   const [storageAvailable, setStorageAvailable] = useState(true);
 
@@ -64,6 +65,7 @@ function App() {
       if (storageAvailable) {
         clearExpenses();
       }
+      window.location.reload(); // Refresh the page
     }
   };
 
@@ -81,6 +83,7 @@ function App() {
       if (storageAvailable) {
         saveExpenses(updatedExpenses);
       }
+      window.location.reload(); // Refresh the page
     }
   };
 
@@ -88,10 +91,17 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <h1>Expense Tracker</h1>
-          <nav>
-            <Link to="/" className="nav-link">Add Expense</Link>
-            <Link to="/summary" className="nav-link">View Summary</Link>
+          <div className="navbar-brand">
+            <span className="nav-icon app-logo-icon">💰</span> {/* Added app logo icon */}
+            <h1>Expense Tracker</h1>
+          </div>
+          <nav className="navbar-links">
+            <Link to="/" className="nav-link">
+              <span className="nav-icon">📝</span> Add Expense
+            </Link>
+            <Link to="/summary" className="nav-link">
+              <span className="nav-icon">📊</span> View Summary
+            </Link>
           </nav>
         </header>
         {!storageAvailable && (
@@ -119,6 +129,9 @@ function App() {
             } />
           </Routes>
         </main>
+        <footer className="App-footer">
+          <p>ExpenseTracker© made by Team9</p>
+        </footer>
       </div>
     </Router>
   );

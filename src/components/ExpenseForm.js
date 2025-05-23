@@ -46,7 +46,7 @@ const ExpenseForm = ({ addExpense }) => {
           {successMessage}
         </div>
       )}
-      <h2>Add New Expense</h2>
+      {/* <h2>Add New Expense</h2> */}
       <form onSubmit={handleSubmit} className="expense-form">
         <div className="form-group">
           <label htmlFor="amount">Amount:</label>
@@ -70,6 +70,7 @@ const ExpenseForm = ({ addExpense }) => {
             required
           >
             <option value="USD">USD ($)</option>
+            <option value="TRY">TRY (₺)</option>
             <option value="EUR">EUR (€)</option>
             <option value="GBP">GBP (£)</option>
             <option value="JPY">JPY (¥)</option>
